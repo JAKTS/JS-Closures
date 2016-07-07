@@ -2,7 +2,7 @@ var outer = function(){
   var name = 'Tyler';
   return function(){
     return 'The original name was ' + name;
-  }
+  };
 };
 
 
@@ -12,7 +12,7 @@ var outer = function(){
 // Invoke outer saving the return value into another variable called 'inner'.
 
 // Code Here
-
+var inner = outer();
 
 //Once you do that, invoke inner.
 
@@ -37,7 +37,9 @@ var callFriend = function(){
 
   //Code Here
 
-
+function makeCall(){
+  console.log("Calling Jake at 435-215-9248");
+}
 
 
 
@@ -52,13 +54,21 @@ var callFriend = function(){
 */
 
 //Code Here
+function makeCounter(){
+return function counter(){
+  var counter = 0;
+  counter ++;
+};
+}
 
 //Uncomment this once you make your function
-//   var count = makeCounter();
-//   count(); // 1
-//   count(); // 2
-//   count(); // 3
-//   count(); // 4
+  var count = makeCounter();
+
+     count(); // 1
+     count(); // 2
+     count(); // 3
+     count(); // 4
+
 
 
 
@@ -74,10 +84,16 @@ var callFriend = function(){
 function counterFactory(value) {
 
   // Code here.
-
+  this.value = value;
 
   return {
-  }
+    inc: function() {
+      return ++value;
+    },
+    dec: function() {
+      return --value;
+    }
+  };
 }
 
 
@@ -96,11 +112,13 @@ counter = counterFactory(10);
     var welcomeText = 'You\'re doing awesome, keep it up ';
 
     // code message function here.
-
+    function message(){
+      return "You're doing awesome, keep it up " + firstname + " " + lastname;
+    }
 
     //Uncommment this to return the value of your invoked message function
 
-    //return message()
+    return message()
   }
 
   motivation('Billy', 'Bob'); // 'Your doing awesome keep it up Billy Bob
