@@ -55,9 +55,9 @@ function makeCall(){
 
 //Code Here
 function makeCounter(){
-return function counter(){
-  var counter = 0;
-  counter ++;
+	var num1= 0;
+return function (num1){
+	num1++;
 };
 }
 
@@ -110,16 +110,16 @@ counter = counterFactory(10);
 
   function motivation(firstname, lastname){
 
-    var welcomeText = 'You\'re doing awesome, keep it up ';
+    var welcomeText = "You're doing awesome, keep it up ";
 
     // code message function here.
     function message(){
-      return "You're doing awesome, keep it up " + firstname + " " + lastname;
+      return welcomeText + firstname + " " + lastname;
     }
 
     //Uncommment this to return the value of your invoked message function
 
-    return message()
+    return message();
   }
 
   motivation('Billy', 'Bob'); // 'Your doing awesome keep it up Billy Bob
@@ -144,8 +144,8 @@ counter = counterFactory(10);
 
     // Anything that is being returned is made public and can be invoked from outside our lexical scope
 
-    return {
-      // Code here.
+    return function (){
+  
     };
 
   })();
