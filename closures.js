@@ -86,6 +86,7 @@ function counterFactory(value) {
   // Code here.
   this.value = value;
 
+
   return {
     inc: function() {
       return ++value;
